@@ -1,6 +1,5 @@
 // DEPENDENCIES
 const express = require('express')
-const { db } = require('../models/book.js')
 const books = express.Router()
 const Book = require('../models/book.js')
 
@@ -90,7 +89,7 @@ books.put('/:id', (req, res) => {
 
 
 // DELETE: 
-books.delete(':/id', (req, res) => {
+books.delete('/:id', (req, res) => {
     Book.findByIdAndDelete(req.params.id)
         .then(deletedBook => {
             res.status(200).json({
