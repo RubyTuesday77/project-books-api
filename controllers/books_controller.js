@@ -91,7 +91,7 @@ books.put('/:id', (req, res) => {
 
 // DELETE: 
 books.delete(':/id', (req, res) => {
-    db.findByIdAndDelete(req.params.id)
+    Book.findByIdAndDelete(req.params.id)
         .then(deletedBook => {
             res.status(200).json({
                 message: 'Delete successful'
